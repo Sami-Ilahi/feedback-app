@@ -27,7 +27,7 @@ header {
   height: 70px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin-bottom: 30px;
 }
@@ -183,6 +183,10 @@ input:focus {
   padding-top: 10px;
   text-align: center;
   color: rebeccapurple;
+}
+
+.about {
+  text-align: center;
 }
 
 /* FIX: Remove position: absolute to keep about icon at the bottom of the

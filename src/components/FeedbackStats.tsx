@@ -4,10 +4,11 @@ function FeedbackStats({
   feedback,
 }: InferProps<typeof FeedbackStats.propTypes>) {
   // Calculate ratings avg
-  const average =
+  const average = Math.round(
     feedback.reduce((acc, { rating }) => {
       return acc + rating;
-    }, 0) / feedback.length;
+    }, 0) / feedback.length
+  );
 
   return (
     <div className='feedback-stats'>

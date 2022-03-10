@@ -1,4 +1,5 @@
 import PropTypes, { InferProps } from "prop-types";
+import AboutIconLink from "./AboutIconLink";
 
 function Header({
   text,
@@ -11,10 +12,11 @@ function Header({
   };
 
   return (
-    <header style={headerStyles}>
-      <div className='container'>
+    <header className='header' style={headerStyles}>
+      <div>
         <h2>{text}</h2>
       </div>
+      <AboutIconLink />
     </header>
   );
 }
