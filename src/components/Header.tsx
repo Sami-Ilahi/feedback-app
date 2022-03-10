@@ -1,5 +1,4 @@
 import PropTypes, { InferProps } from "prop-types";
-import { Link } from "react-router-dom";
 
 function Header({
   text,
@@ -14,9 +13,6 @@ function Header({
   return (
     <header style={headerStyles}>
       <div className='container'>
-        {/* <Link to='/' style={{ textDecoration: "none", color: "#ff6a95" }}>
-          <h2>{text}</h2>
-        </Link> */}
         <h2>{text}</h2>
       </div>
     </header>
