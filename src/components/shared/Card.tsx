@@ -1,8 +1,6 @@
 import PropTypes, { InferProps } from "prop-types";
 
 function Card({ children, reverse }: InferProps<typeof Card.propTypes>) {
-  // return <div className={`card ${reverse && 'reverse'}`}>{children}</div>
-
   return (
     <div
       className='card'
