@@ -57,7 +57,9 @@ export const FeedbackProvider = ({ children }: Props) => {
 
   //fetch feedback from json server
   const fetchFeedback = async () => {
-    const response = await fetch(`/feedback?_sort=id&_order=desc`);
+    const response = await fetch(
+      `https://feedback-app-backend-api.herokuapp.com/feedback?_sort=id&_order=desc`
+    );
     const data = await response.json();
     setFeedback(data);
     setIsLoading(false);
@@ -65,13 +67,16 @@ export const FeedbackProvider = ({ children }: Props) => {
 
   // Add feedback
   const addFeedback = async (newFeedback: any) => {
-    const response = await fetch("/feedback", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newFeedback),
-    });
+    const response = await fetch(
+      "https://feedback-app-backend-api.herokuapp.com/feedback",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newFeedback),
+      }
+    );
 
     const data = await response.json();
 
@@ -81,7 +86,10 @@ export const FeedbackProvider = ({ children }: Props) => {
   // Delete feedback
   const deleteFeedback = async (id: number | string) => {
     if (window.confirm("Are you sure to delete?")) {
-      await fetch(`/feedback/${id}`, { method: "DELETE" });
+      await fetch(
+        `https://feedback-app-backend-api.herokuapp.com/feedback/${id}`,
+        { method: "DELETE" }
+      );
 
       setFeedback(feedback.filter((item: FeedbackItemType) => item.id !== id));
     }
@@ -97,13 +105,16 @@ export const FeedbackProvider = ({ children }: Props) => {
 
   // Update feedback item
   const updateFeedback = async (id: string, updItem: updatedFeedbackType) => {
-    const response = await fetch(`/feedback/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updItem),
-    });
+    const response = await fetch(
+      `https://feedback-app-backend-api.herokuapp.com/feedback/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updItem),
+      }
+    );
 
     const data = await response.json();
     setFeedback(feedback.map(item => (item.id === id ? data : item)));
