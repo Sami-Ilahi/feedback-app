@@ -25,7 +25,7 @@ interface feedbackContextType {
   };
   isLoading: boolean;
   deleteFeedback: (id: string) => void;
-  addFeedback: ({}) => void;
+  addFeedback: ({}) => void /* eslint-disable-line */;
   editFeedback: (item: FeedbackItemType) => void;
   updateFeedback: (id: string, updItem: updatedFeedbackType) => void;
 }
@@ -38,8 +38,8 @@ const FeedbackContext = createContext<feedbackContextType>({
   },
   isLoading: true,
   deleteFeedback: () => [],
-  addFeedback: ({}) => [],
-  editFeedback: ({}) => {},
+  addFeedback: ({}) => [] /* eslint-disable-line */,
+  editFeedback: ({}) => {} /* eslint-disable-line */,
   updateFeedback: () => {},
 });
 
