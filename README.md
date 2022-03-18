@@ -4,4 +4,4 @@ This is a React project that allows users to leave feedback on a website for a p
 
 In the client side the state is managed by Context API. For the backend, Json server is used to create a mock rest API to make request to.
 
-![](src/images/screenshot.png)
+![](src/images/screenshot.jpg)
